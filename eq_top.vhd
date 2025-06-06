@@ -59,8 +59,9 @@ inv(3) <= not sw(4);
        in1 => bfinal(3),
        entra1 => entra(2),
        sai1 => entra(3),
-       resultado => led3,
+       resultado => led3
 );
+
 led(3) <= led3;
 led(4) <= (sw(8) and bfinal(3) and not led3) or (not sw(8) and not bfinal(3) and led3);
 end struc_arch;
