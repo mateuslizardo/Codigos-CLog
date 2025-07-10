@@ -2,7 +2,7 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date: 04.07.2025 09:27:17
+-- Create Date: 10.07.2025 14:50:45
 -- Design Name: 
 -- Module Name: top - Behavioral
 -- Project Name: 
@@ -32,47 +32,29 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity top is
-  Port (
-        sseg : out std_logic_vector(6 downto 0);
-        an : out std_logic_vector(7 downto 0);
-        clk : in std_logic
-   );
+  Port ( 
+    sseg : out std_logic_vector(6 downto 0);
+    an : out std_logic_vector(7 downto 0);
+    clk : in std_logic
+  );
 end top;
 
 architecture Behavioral of top is
---    signal d0 : std_logic_vector(6 downto 0);
---    d0 <= "0000001";
---    signal d1 : std_logic_vector(6 downto 0);
---    d1 <= "1001111";
---    signal d2 : std_logic_vector(6 downto 0);
---    d2 <= "0010010";
---    signal d3 : std_logic_vector(6 downto 0);
---    d3 <= "0000110";
---    signal d4 : std_logic_vector(6 downto 0);
---    d4 <= "1001100";
---    signal d5 : std_logic_vector(6 downto 0);
---    d5 <= "0100100";
---    signal d6 : std_logic_vector(6 downto 0);
---    d6 <= "0100000";
---    signal d7 : std_logic_vector(6 downto 0);
---     d7 <= "0001111";
-     
-     
+
 begin
-    fsm : entity work.fsm_eg(mult_seg_arch)
+    fsm : entity work.fsm(Behavioral)
         port map (
-            sseg0 => "1000000",
-            sseg1 => "1001111",
-            sseg2 => "0010010",
-            sseg3 => "0000110",
-            sseg4 => "1001100",
-            sseg5 => "0100100",
-            sseg6 => "0100000",
-            sseg7 => "0001111",
+            in0 => "1000000",
+            in1 => "1111001",
+            in2 => "0100100",
+            in3 => "0110000",
+            in4 => "0011001",
+            in5 => "0010010",
+            in6 => "0000010",
+            in7 => "1111000",
             clk => clk,
             saida => sseg(6 downto 0),
             an => an(7 downto 0)
-        );    
-     
-     
+        );
+
 end Behavioral;
